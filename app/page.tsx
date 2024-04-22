@@ -1,15 +1,21 @@
 import BBSCardList from './components/layouts/header/BBSCardList';
-import BBSCard from './components/BBSCard';
+import { BBSData } from './types/types';
 
-export default function Home() {
+const getBBSAllData = async () => {
+  const response = await fetch('http://localhost:3000/api/post', {
+    cache: 'no-store',
+  });
+
+  const bbsAllData: BBSData[] = await response.json();
+  return bbsAllData;
+};
+
+export default async function Home() {
+  const bbsAllData = await getBBSAllData();
+
   return (
-    <BBSCardList>
-      <BBSCard />
-      <BBSCard />
-      <BBSCard />
-      <BBSCard />
-      <BBSCard />
-      <BBSCard />
-    </BBSCardList>
+    <main>
+      <BBSCardList bbsAllData={bbsAllData} />
+    </main>
   );
 }
