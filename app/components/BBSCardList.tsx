@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import BBSCard from '../../BBSCard';
+import BBSCard from './BBSCard';
 import { BBSData } from '@/app/types/types';
 
 interface Props {
