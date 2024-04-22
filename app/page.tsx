@@ -1,4 +1,4 @@
-import BBSCardList from './components/layouts/header/BBSCardList';
+import BBSCardList from './components/BBSCardList';
 import { BBSData } from './types/types';
 
 const getBBSAllData = async () => {
